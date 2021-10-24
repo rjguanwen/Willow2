@@ -4,9 +4,9 @@
 package public
 
 import (
-	log "github.com/cihub/seelog"
-	"github.com/rjguanwen/willow/utils"
+	"log"
 	"github.com/spf13/viper"
+	"github.com/rjguanwen/Willow2/utils"
 	"path"
 )
 
@@ -35,7 +35,7 @@ func InitBaseConfig(env string) (baseConfig BaseConfig, err error) {
 
 	err = v.ReadInConfig() // 根据以上配置读取加载配置文件
 	if err != nil {
-		log.Error("读取配置文件错误：", err) // 读取配置文件失败致命错误
+		log.Panicln("读取配置文件错误：", err) // 读取配置文件失败致命错误
 	}
 
 	// 服务器基础配置

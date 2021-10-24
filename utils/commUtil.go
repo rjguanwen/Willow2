@@ -6,6 +6,7 @@ package utils
 import (
 	"bytes"
 	"encoding/binary"
+	"fmt"
 	"time"
 )
 
@@ -67,9 +68,9 @@ func IsEqual(f1, f2 float64) bool {
 func GetCurrentMonth() string {
 	d := time.Now().Month()
 	if d > 9 {
-		return string(d)
+		return fmt.Sprint(d)
 	} else {
-		return "0" + string(d)
+		return "0" + fmt.Sprint(d)
 	}
 }
 
